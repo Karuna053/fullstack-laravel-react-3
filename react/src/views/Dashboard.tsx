@@ -3,7 +3,7 @@ import './../App.css'
 export default function Dashboard() {
   return (
     <>
-      Dashboard
+      Welcome to Dashboard!
     </>
   )
 }

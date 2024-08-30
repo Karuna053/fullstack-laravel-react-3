@@ -9,7 +9,7 @@ Route::middleware('auth:sanctum')->group(function() {
         return $request->user();
     });
     Route::post('/logout', [AuthController::class, 'logout']);
-})
+});
 
 Route::post('/signup', [AuthController::class, 'signup']);
 Route::post('/login', [AuthController::class, 'login']);
