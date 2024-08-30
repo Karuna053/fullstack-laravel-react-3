@@ -10,7 +10,6 @@ export default function Signup() {
   const passwordRef = useRef();
   const passwordConfirmationRef = useRef();
   const [errors, setErrors] = useState(null);
-
   const {setUser, setToken} = useStateContext()
 
   const onSubmit = (ev) => {
@@ -32,8 +31,8 @@ export default function Signup() {
         console.log(err);
         const response = err.response;
         if (response && response.status == 422 ){ // Validation Error
-         console.log(response.data.errors)
-         setErrors(response.data.errors);
+          console.log(response.data.errors)
+          setErrors(response.data.errors);
         }
       })
   }
@@ -51,8 +50,7 @@ export default function Signup() {
               {Object.keys(errors).map(key => (
                 <p key={key}>{errors[key][0]}</p>
               ))}
-            </div>
-            }
+            </div>}
 
             <input ref={nameRef} placeholder="Full Name"/>
             <input ref={emailRef} type="email" placeholder="Email Address"/>
