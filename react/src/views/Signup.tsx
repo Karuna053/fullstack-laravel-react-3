@@ -1,7 +1,8 @@
 import './../App.css'
 import {Link} from "react-router-dom"
 import {useRef} from "react"
-import axiosClient from "../axios.client.js"
+import axiosClient from "../axios-client.js"
+import {useStateContext} from "../contexts/ContextProvider.tsx";
 
 export default function Signup() {
   const nameRef = useRef();
@@ -28,6 +29,9 @@ export default function Signup() {
       })
       .catch(err => {
         const response = err.response;
+        if (response && response.status == 422 ){ // Validation Error
+         console.log(response.data.errors)
+        }
       })
   }
 
